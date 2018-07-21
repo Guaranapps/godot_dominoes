@@ -1,0 +1,331 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://godot_icon_big.jpg" type="Texture" id=2]
+[ext_resource path="res://target_camera.gd" type="Script" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+
+size = Vector3( 20, 1, 20 )
+subdivide_width = 1
+subdivide_height = 1
+subdivide_depth = 0
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 10, 0.5, 10 )
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "anim"
+length = 35.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("target:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.1, 15, 22.1, 30, 35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 7.28515, 0, 3.97723 ), Vector3( 0.289545, 0, 8.03884 ), Vector3( -8.29391, 0, -2.96003 ), Vector3( -0.543609, 0, -6.02212 ), Vector3( 7.01785, 0, -2.23039 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7.1, 10.6, 15, 22.1, 30, 35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 6.64023, 1.53348, 1.67099 ), Vector3( -5.01518, 1.53348, 1.67099 ), Vector3( 0.0688839, 2.42005, -1.14617 ), Vector3( 4.07425, 2.42005, 3.63485 ), Vector3( -4.2202, 2.42005, 0.143658 ), Vector3( 4.67738, 2.42005, 1.22494 ), Vector3( 0, 12.6729, 0.326046 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("logo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 31.4, 35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Curve3D" id=4]
+
+bake_interval = 0.2
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 7.6069, 0, 3.17637, 0, 0, 0, 0, 0, 0, 7.52463, 0, 5.01791, 0, 0, 0, 0, 0, 0, 6.7557, 0, 6.04707, 0, 0, 0, 0, 0, 0, 5.51533, 0, 6.86298, 0, 0, 0, 0, 0, 0, 4.14649, 0, 7.67913, 0, 0, 0, 0, 0, 0, 2.1346, 0, 8.11104, 0, 0, 0, 0, 0, 0, -0.391789, 0, 8.20132, 0, 0, 0, 0, 0, 0, -2.3618, 0, 8.11928, 0, 0, 0, 0, 0, 0, -4.93258, 0, 7.35318, 0, 0, 0, 0, 0, 0, -6.60463, 0, 6.28567, 0, 0, 0, 0, 0, 0, -7.54901, 0, 5.04553, 0, 0, 0, 0, 0, 0, -7.72422, 0, 2.90471, 0, 0, 0, 0, 0, 0, -7.51513, 0, 0.163651, 0, 0, 0, 0, 0, 0, -7.68972, 0, -1.63459, 0, 0, 0, 0, 0, 0, -8.72013, 0, -3.08869, 0, 0, 0, 0, 0, 0, -7.18267, 0, -5.36112, 0, 0, 0, 0, 0, 0, -5.55376, 0, -4.46482, -0.138546, 0, 0.490323, 0.244254, 0, -0.466674, -4.05629, 0, -5.19556, -0.175628, 0, 0.472802, 0.23907, 0, -0.388495, -4.27441, 0, -7.37913, -0.733698, 0, -0.223301, 0.478498, 0, 0.1595, -1.51524, 0, -8.37372, 0, 0, 0, 0, 0, 0, -0.889521, 0, -6.35758, 0, 0, 0, 0, 0, 0, 0.566219, 0, -6.48872, -0.350899, 0, 0.1914, 0.319, 0, -0.159499, 1.48335, 0, -8.30993, 0, 0, 0, 0, 0, 0, 4.11871, 0, -7.48016, 0, 0, 0, 0, 0, 0, 3.9515, 0, -5.25305, 0, 0, 0, 0, 0, 0, 5.4521, 0, -4.27088, 0, 0, 0, 0, 0, 0, 6.90612, 0, -5.34412, 0, 0, 0, 0, 0, 0, 8.83722, 0, -3.12086, 0, 0, 0, 0, 0, 0, 7.68407, 0, -1.44865, 0, 0, 0, 0, 0, 0, 7.51607, 0, 0.350223 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="ProceduralSky" id=5]
+
+radiance_size = 4
+sky_top_color = Color( 0.0470588, 0.454902, 0.976471, 1 )
+sky_horizon_color = Color( 0.556863, 0.823529, 0.909804, 1 )
+sky_curve = 0.25
+sky_energy = 1.0
+ground_bottom_color = Color( 0.101961, 0.145098, 0.188235, 1 )
+ground_horizon_color = Color( 0.482353, 0.788235, 0.952941, 1 )
+ground_curve = 0.01
+ground_energy = 1.0
+sun_color = Color( 1, 1, 1, 1 )
+sun_latitude = 35.0
+sun_longitude = 0.0
+sun_angle_min = 1.0
+sun_angle_max = 100.0
+sun_curve = 0.05
+sun_energy = 16.0
+texture_size = 2
+
+[sub_resource type="Environment" id=6]
+
+background_mode = 2
+background_sky = SubResource( 5 )
+background_sky_custom_fov = 0.0
+background_color = Color( 0, 0, 0, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0, 0, 0, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.5, 0.6, 0.7, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = true
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = true
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = true
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+adjustment_enabled = false
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+_sections_unfolded = [ "Background", "DOF Far Blur", "DOF Near Blur", "Glow", "SS Reflections", "SSAO" ]
+
+[sub_resource type="BakedLightmapData" id=8]
+
+bounds = AABB( -10, -10, -10, 20, 20, 20 )
+cell_space_transform = Transform( 6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 64, 64, 64 )
+cell_subdiv = 8
+energy = 1.0
+octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
+user_data = [  ]
+
+[node name="main" type="Spatial" index="0"]
+
+script = ExtResource( 1 )
+nb_dominoes = 200
+
+[node name="floor" type="StaticBody" parent="." index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="mesh" type="MeshInstance" parent="floor" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="coll_shape" type="CollisionShape" parent="floor" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+shape = SubResource( 2 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="main_light" type="DirectionalLight" parent="." index="1"]
+
+transform = Transform( 0.965926, -0.212012, 0.148452, 3.58063e-08, 0.573576, 0.819152, -0.258819, -0.79124, 0.554032, -17.1538, 6.49458, 0 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 200.0
+_sections_unfolded = [ "Shadow" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/anim = SubResource( 3 )
+blend_times = [  ]
+
+[node name="logo" type="Sprite3D" parent="." index="3"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.145748, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+centered = true
+offset = Vector2( 0, 0 )
+flip_h = false
+flip_v = false
+modulate = Color( 1, 1, 1, 0 )
+opacity = 1.0
+pixel_size = 0.0098
+axis = 2
+transparent = true
+shaded = false
+double_sided = true
+alpha_cut = 0
+texture = ExtResource( 2 )
+vframes = 1
+hframes = 1
+frame = 0
+region_enabled = false
+region_rect = Rect2( 0, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Path" type="Path" parent="." index="4"]
+
+curve = SubResource( 4 )
+
+[node name="target" type="Position3D" parent="." index="5"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28515, 0, 3.97723 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera" type="Camera" parent="." index="6"]
+
+transform = Transform( -0.963054, 0.14523, -0.226795, 0, 0.842134, 0.539269, 0.26931, 0.519345, -0.81102, 6.64023, 1.53348, 1.67099 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = SubResource( 6 )
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+target = NodePath("../target")
+
+[node name="BakedLightmap" type="BakedLightmap" parent="." index="7"]
+
+layers = 1
+bake_cell_size = 0.25
+bake_quality = 2
+bake_mode = 0
+bake_propagation = 1.0
+bake_energy = 1.0
+bake_hdr = false
+bake_extents = Vector3( 10, 10, 10 )
+capture_cell_size = 0.5
+image_path = "."
+light_data = SubResource( 8 )
+_sections_unfolded = [ "Bake" ]
+
+
